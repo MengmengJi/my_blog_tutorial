@@ -9,7 +9,7 @@ def home(request):
     post_list = Article.objects.all()    #获取全部的Article对象
     return render(request, 'home.html', {'post_list':post_list})
 
-def detail(request, my_args):
+def detail(request, id):
     try:
         post = Article.objects.get(id = str(id))
         #因为id是每个博文的唯一标识，所以这里使用id对数据库中的博文进行查找
